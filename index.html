@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxwell Hill — CV</title>
+<style>
+  :root {
+    --bg: #f5f9f5;
+    --ink: #1c1c1c;
+    --muted: #7a8a7e;
+    --line: #e3ebe3;
+    --accent: #6a9b7e;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121a14;
+      --ink: #e6f0e8;
+      --muted: #8aa092;
+      --line: #23302a;
+      --accent: #8fc4a8;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header { margin-bottom: 2.5rem; display: flex; gap: 1.25rem; align-items: center; }
+  .photo {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+    border: 1px solid var(--line);
+  }
+  .head-text { flex: 1 1 auto; min-width: 0; }
+  h1 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.35rem;
+  }
+  .role { color: var(--muted); margin: 0 0 1rem; font-size: 0.95rem; }
+  .contact { font-size: 0.9rem; color: var(--muted); }
+  .contact a { color: var(--ink); }
+  .contact .sep { color: var(--line); margin: 0 0.5rem; }
+  .lede { margin: 1.5rem 0 0; max-width: 56ch; }
+
+  section { margin-top: 2.25rem; }
+  .eyebrow {
+    font: 600 0.72rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+
+  .entry { margin: 1.1rem 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+  .meta { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
+
+  ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+  li { margin: 0.3rem 0; }
+  li::marker { color: var(--accent); }
+
+  dl { margin: 0.3rem 0; display: grid; grid-template-columns: 9rem 1fr; row-gap: 0.35rem; column-gap: 1rem; }
+  dt { color: var(--muted); font-size: 0.9rem; }
+  dd { margin: 0; font-size: 0.95rem; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="photo" src="/photo.jpg" alt="Maxwell Hill" width="84" height="84">
+  <div class="head-text">
+    <h1>Maxwell Hill</h1>
+    <p class="role">Full-stack developer · embedded &amp; web</p>
+    <p class="contact">
+      <a href="mailto:maxwellhill2004@icloud.com">email</a><span class="sep">·</span>
+      <a href="tel:+447378302728">+44 7378 302728</a><span class="sep">·</span>
+      <a href="https://github.com/max-hill-4">github</a><span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/maxwellhill2004">linkedin</a>
+    </p>
+  </div>
+</header>
+<p class="lede">
+  Builds full-stack web tools and custom hardware — from PCB design to deployed product.
+  Production work in Next.js, Python ML pipelines, and embedded firmware.
+  Active open-source contributor — ZMK Studio, GitHub's <code>.gitignore</code> templates, OrcaSlicer.
+</p>
+
+<section>
+  <div class="eyebrow">Experience</div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <h3><a href="https://callon.group">Callon Group</a> — Full-Stack Developer</h3>
+      <span class="meta">Sept 2025 – now</span>
+    </div>
+    <ul>
+      <li>LLM-backed contract review pipeline that extracts and risk-scores clauses from PDFs (Python, Pydantic, Streamlit).</li>
+      <li>Next.js + SQLite tool indexing 1,000+ contract line items for bill-of-quantities pricing (TypeScript, better-sqlite3, Tailwind).</li>
+      <li>Migrated the WordPress site off legacy infra, cutting page loads from 9s to 300ms (Docker Compose, Caddy, Cloudflare CDN).</li>
+      <li>Implemented a DevOps pipeline for the WordPress site on cPanel: GH Actions → cPanel Git Version Control via UAPI (SSH deploy key, .cpanel.yml, scoped API token, CODEOWNERS-gated workflow, branch protection).</li>
+      <li>Rebuilt the site in Astro and deployed on Cloudflare Pages — global edge CDN dropped international TTFB from ~3s to ~50ms (wrangler.jsonc, Git-integrated auto-builds, PR preview URLs, one-click atomic rollbacks).</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <h3><a href="https://aphex-properties.com">Aphex Properties</a> — Freelance Web Developer</h3>
+      <span class="meta">Aug 2025</span>
+    </div>
+    <ul>
+      <li>PHP plugin parsing property XML feeds into an estate agency site (Docker Compose, Caddy, Cloudflare CDN).</li>
+      <li>Self-hosted Chatwoot live chat on Oracle Cloud VPS for lead capture.</li>
+      <li>Self-hosted Umami analytics on Oracle Cloud VPS for privacy-friendly traffic insight (no third-party cookies, GDPR-friendly).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Projects</div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <h3>ProTakeoff fork — PDF measurement for construction / QS</h3>
+      <span class="meta">Jul 2026</span>
+    </div>
+    <ul>
+      <li>Forked a single-user tool for measuring architectural PDFs (areas, linear runs, item counts — the kind a quantity surveyor does) and rebuilt it for real-time multi-user collaboration (Yjs CRDT, HTTP polling, zero merge conflicts).</li>
+      <li>Deployed on a Cloudflare stack: Pages + Functions (Hono) + D1 + R2 + CF Access; Yjs is source of truth, mirrored to Zustand.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <h3>Polymarket Analytics</h3>
+      <span class="meta">Apr 2025</span>
+    </div>
+    <ul>
+      <li>Full-stack analytics dashboard (Next.js + Python) for historical market data, smart-money tracking, and backtesting.</li>
+      <li>NautilusTrader integration for realistic execution modeling — slippage, latency, fill probability across six strategies.</li>
+      <li>Containerised with Docker Compose; Python backtest service proxied through Next.js API routes.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <h3><a href="https://github.com/max-hill-4/max-58">Custom Keyboards</a></h3>
+      <span class="meta">Nov 2024 – now</span>
+    </div>
+    <ul>
+      <li>Webcam hand scanner using MediaPipe; extracts fingertip/palm measurements to generate parametric keyboard layouts fitted to the user's hands.</li>
+      <li>Two nRF52840-based keyboard PCBs designed in KiCad; 3D-printed enclosures, PCBWAY-sourced, hand-soldered.</li>
+      <li>Contributed import/export to ZMK Studio (open-source keyboard config tool); merged PRs in active community use.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <h3><a href="https://github.com/max-hill-4/college-alevel-nea">A-Level NEA — Multiplayer Game</a></h3>
+      <span class="meta">2022</span>
+    </div>
+    <ul>
+      <li>Multiplayer game built with Pygame and Python sockets — clients connect over the network for real-time play against each other.</li>
+      <li>MySQL backend for persistent user accounts and match state; server handles multiple concurrent client connections.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Open Source</div>
+  <ul>
+    <li>Merged PRs to <a href="https://github.com/zmkfirmware/zmk-studio">ZMK Studio</a> (open-source keyboard config tool) — import/export support in active community use.</li>
+    <li>GitHub's official <a href="https://github.com/github/gitignore"><code>.gitignore</code> templates</a> — changes ship in thousands of new repos.</li>
+    <li><a href="https://github.com/SoftFever/OrcaSlicer">OrcaSlicer</a> — restored commit history to maintain GPL/AGPL license compliance.</li>
+    <li>Contributed to my university's shared Docker images used across teaching labs.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow">Skills</div>
+  <dl>
+    <dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL, PHP</dd>
+    <dt>Frameworks</dt><dd>Next.js, React, Flask, Streamlit, Pydantic</dd>
+    <dt>CMS</dt><dd>WordPress, Astro</dd>
+    <dt>Embedded</dt><dd>KiCad, nRF52, ZMK firmware, PCB design</dd>
+    <dt>DevOps / Cloud</dt><dd>Docker, Caddy, Cloudflare Pages/Functions, D1, R2, wrangler, GitHub Actions, cPanel UAPI, Oracle Cloud, Azure</dd>
+  </dl>
+</section>
+
+<section>
+  <div class="eyebrow">Education</div>
+  <div class="entry">
+    <div class="entry-head">
+      <h3>University of Lincoln — BSc Computer Science (2:1)</h3>
+      <span class="meta">2022 – 2025</span>
+    </div>
+    <ul>
+      <li><a href="https://github.com/max-hill-4/uni-dissertation">Third-year project</a>: built a CNN pipeline for multi-class hormone prediction from sleep EEG signals, achieving 88% accuracy on held-out test data. End-to-end deep learning workflow — PyTorch for modelling, MNE for EEG preprocessing, Docker for reproducibility.</li>
+      <li><a href="https://github.com/max-hill-4/uni-twitter-analysis">Second-year project</a>: tweet sentiment prediction model served through a Flask web app — users could submit tweets and get sentiment classifications back. Trained with TensorFlow and scikit-learn on labelled tweet data.</li>
+      <li>Certification: AZ-900 Microsoft Azure Fundamentals.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head">
+      <h3>DevOpsDays London 2024</h3>
+      <span class="meta">2024</span>
+    </div>
+    <ul>
+      <li>Attended the annual DevOps conference in London — talks on platform engineering, observability, and CI/CD at scale.</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
