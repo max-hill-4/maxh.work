@@ -18,7 +18,8 @@ Full-Stack Developer at [Callon Group](https://callon.group) (Sept 2025 – pres
 - Frameworks: Next.js, React, Flask, Streamlit, Pydantic
 - CMS: WordPress, Astro
 - Embedded: KiCad, nRF52, ZMK firmware, PCB design
-- DevOps/Cloud: Docker, Caddy, Cloudflare Pages/Functions, D1, R2, wrangler, GitHub Actions, cPanel UAPI, Oracle Cloud, Azure
+- AI/Agentic: LLM pipelines, agentic systems, LLM-backed document processing
+- DevOps/Cloud: Docker, Caddy, serverless (Cloudflare Functions/Pages, D1, R2, wrangler), self-hosted VPS infrastructure (Chatwoot, Umami, analytics), GitHub Actions, cPanel UAPI, Oracle Cloud, Azure
 - ML: PyTorch, TensorFlow, scikit-learn, MNE (EEG), CNNs
 
 ## Notable Projects
