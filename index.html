@@ -157,10 +157,12 @@
   #nerd-toggle:hover { border-color: var(--accent); }
   #nerd-toggle[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 
-  ul.norm { display: block; }
-  body.nerd ul.norm { display: none; }
-  ul.nerd { display: none; }
-  body.nerd ul.nerd { display: block; }
+  .norm { display: block; }
+  body.nerdmode .norm { display: none; }
+  .nerd { display: none; }
+  body.nerdmode .nerd { display: block; }
+  section.nerd { display: none; }
+  body.nerdmode section.nerd { display: block; }
 </style>
 </head>
 <body>
@@ -179,14 +181,29 @@
   </div>
   <button id="nerd-toggle" aria-pressed="false" title="Show the technical detail">nerd mode</button>
 </header>
-<p class="lede">
+<p class="lede norm">
+  I design and build websites, web apps and custom tools for businesses — fast, modern, and made to win you customers.
+  Recently my work has ranged from AI that reviews contracts, to a website that now brings Callon Group clients who found them through ChatGPT.
+  If you need a website, a tool, or automation built — get in touch.
+</p>
+
+<section class="norm">
+  <div class="eyebrow">What I build</div>
+  <ul>
+    <li><strong>Websites</strong> — fast, modern sites that look great on any device and load instantly.</li>
+    <li><strong>Web apps &amp; tools</strong> — dashboards, pricing tools, booking systems, whatever your team needs.</li>
+    <li><strong>AI &amp; automation</strong> — systems that read documents, sort information and save hours of manual work.</li>
+  </ul>
+</section>
+<p class="lede nerd">
   Builds full-stack web tools and custom hardware — from PCB design to deployed product.
   Production work in Next.js, Python ML pipelines, and embedded firmware.
   Active open-source contributor — ZMK Studio, GitHub's <code>.gitignore</code> templates, OrcaSlicer.
 </p>
 
 <section>
-  <div class="eyebrow">Experience</div>
+  <div class="eyebrow norm">Recent work</div>
+  <div class="eyebrow nerd">Experience</div>
 
   <div class="entry">
     <div class="entry-head">
@@ -223,7 +240,8 @@
 </section>
 
 <section>
-  <div class="eyebrow">Projects</div>
+  <div class="eyebrow norm">Things I've made</div>
+  <div class="eyebrow nerd">Projects</div>
 
   <div class="entry">
     <div class="entry-head">
@@ -284,9 +302,12 @@
   </div>
 </section>
 
-<section>
+<section class="nerd">
   <div class="eyebrow">Open Source</div>
-  <ul>
+  <ul class="norm">
+    <li>Contribute to popular open-source projects — a keyboard configuration tool, GitHub's own developer templates, and 3D-printing software.</li>
+  </ul>
+  <ul class="nerd">
     <li>Merged PRs to <a href="https://github.com/zmkfirmware/zmk-studio">ZMK Studio</a> (open-source keyboard config tool) — import/export support in active community use.</li>
     <li>GitHub's official <a href="https://github.com/github/gitignore"><code>.gitignore</code> templates</a> — changes ship in thousands of new repos.</li>
     <li><a href="https://github.com/SoftFever/OrcaSlicer">OrcaSlicer</a> — restored commit history to maintain GPL/AGPL license compliance.</li>
@@ -294,7 +315,7 @@
   </ul>
 </section>
 
-<section>
+<section class="nerd">
   <div class="eyebrow">Skills</div>
   <dl>
     <dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL, PHP</dd>
@@ -306,14 +327,18 @@
   </dl>
 </section>
 
-<section>
+<section class="nerd">
   <div class="eyebrow">Education</div>
   <div class="entry">
     <div class="entry-head">
       <h3>University of Lincoln — BSc Computer Science (2:1)</h3>
       <span class="meta">2022 – 2025</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Final-year project used AI to predict health markers from sleep data, reaching 88% accuracy.</li>
+      <li>Certification: AZ-900 Microsoft Azure Fundamentals.</li>
+    </ul>
+    <ul class="nerd">
       <li><a href="https://github.com/max-hill-4/uni-dissertation">Third-year project</a>: built a CNN pipeline for multi-class hormone prediction from sleep EEG signals, achieving 88% accuracy on held-out test data. End-to-end deep learning workflow — PyTorch for modelling, MNE for EEG preprocessing, Docker for reproducibility.</li>
       <li><a href="https://github.com/max-hill-4/uni-twitter-analysis">Second-year project</a>: tweet sentiment prediction model served through a Flask web app — users could submit tweets and get sentiment classifications back. Trained with TensorFlow and scikit-learn on labelled tweet data.</li>
       <li>Certification: AZ-900 Microsoft Azure Fundamentals.</li>
@@ -333,14 +358,14 @@
 <script>
 (function () {
   var btn = document.getElementById('nerd-toggle');
-  if (localStorage.getItem('nerd') === '1') document.body.classList.add('nerd');
+  if (localStorage.getItem('nerd') === '1') document.body.classList.add('nerdmode');
   function sync() {
-    var on = document.body.classList.contains('nerd');
+    var on = document.body.classList.contains('nerdmode');
     btn.setAttribute('aria-pressed', on);
     btn.textContent = on ? 'nerd mode: on' : 'nerd mode';
   }
   btn.addEventListener('click', function () {
-    var on = document.body.classList.toggle('nerd');
+    var on = document.body.classList.toggle('nerdmode');
     localStorage.setItem('nerd', on ? '1' : '0');
     sync();
   });
