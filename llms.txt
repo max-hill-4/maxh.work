@@ -1,0 +1,39 @@
+# Maxwell Hill
+
+Full-stack developer working across web and embedded systems — from PCB design to deployed product. Based in the UK. BSc Computer Science, University of Lincoln (2022–2025, 2:1).
+
+- Site: https://maxh.work/
+- Email: maxwellhill2004@icloud.com
+- Phone: +44 7378 302728
+- GitHub: https://github.com/max-hill-4
+- LinkedIn: https://www.linkedin.com/in/maxwellhill2004
+
+## Current Role
+
+Full-Stack Developer at [Callon Group](https://callon.group) (Sept 2025 – present). Built an LLM-backed contract review pipeline that extracts and risk-scores clauses from PDFs (Python, Pydantic, Streamlit); a Next.js + SQLite tool indexing 1,000+ contract line items for bill-of-quantities pricing; migrated Callon Group's WordPress site off legacy infra (9s → 300ms page loads), then rebuilt it in Astro on Cloudflare Pages (~3s → ~50ms international TTFB). The rebuilt site became a direct revenue channel — Callon Group won new clients through it, with inbound leads attributed to ChatGPT and AI search recommendations.
+
+## Key Skills
+
+- Languages: Python, TypeScript, JavaScript, SQL, PHP
+- Frameworks: Next.js, React, Flask, Streamlit, Pydantic
+- CMS: WordPress, Astro
+- Embedded: KiCad, nRF52, ZMK firmware, PCB design
+- DevOps/Cloud: Docker, Caddy, Cloudflare Pages/Functions, D1, R2, wrangler, GitHub Actions, cPanel UAPI, Oracle Cloud, Azure
+- ML: PyTorch, TensorFlow, scikit-learn, MNE (EEG), CNNs
+
+## Notable Projects
+
+- ProTakeoff fork (Jul 2026): real-time multi-user PDF measurement for construction/quantity surveyors (Yjs CRDT, Cloudflare Pages + Functions + D1 + R2).
+- Polymarket Analytics (Apr 2025): full-stack analytics dashboard (Next.js + Python) with NautilusTrader backtesting.
+- Custom Keyboards (Nov 2024 – now): webcam hand scanner (MediaPipe) generating parametric keyboard layouts; two nRF52840 PCBs designed in KiCad; merged PRs to ZMK Studio.
+- University dissertation: CNN pipeline for multi-class hormone prediction from sleep EEG, 88% accuracy (PyTorch, MNE, Docker).
+
+## Open Source
+
+- [ZMK Studio](https://github.com/zmkfirmware/zmk-studio) — import/export support, in active community use
+- [GitHub .gitignore templates](https://github.com/github/gitignore) — merged changes
+- [OrcaSlicer](https://github.com/SoftFever/OrcaSlicer) — restored commit history for GPL/AGPL compliance
+
+## Certification
+
+AZ-900 Microsoft Azure Fundamentals.
