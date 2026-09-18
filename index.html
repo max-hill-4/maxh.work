@@ -88,7 +88,7 @@
     font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  header { margin-bottom: 2.5rem; display: flex; gap: 1.25rem; align-items: center; }
+  header { margin-bottom: 2.5rem; display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
   .photo {
     width: 84px;
     height: 84px;
@@ -140,6 +140,27 @@
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+  #nerd-toggle {
+    font: 600 0.72rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
+  #nerd-toggle:hover { border-color: var(--accent); }
+  #nerd-toggle[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  ul.norm { display: block; }
+  body.nerd ul.norm { display: none; }
+  ul.nerd { display: none; }
+  body.nerd ul.nerd { display: block; }
 </style>
 </head>
 <body>
@@ -156,6 +177,7 @@
       <a href="https://www.linkedin.com/in/maxwellhill2004">linkedin</a>
     </p>
   </div>
+  <button id="nerd-toggle" aria-pressed="false" title="Show the technical detail">nerd mode</button>
 </header>
 <p class="lede">
   Builds full-stack web tools and custom hardware — from PCB design to deployed product.
@@ -171,7 +193,10 @@
       <h3><a href="https://callon.group">Callon Group</a> — Full-Stack Developer</h3>
       <span class="meta">Sept 2025 – now</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Built AI tools that review contracts automatically and a system for pricing contract work, then rebuilt the company's website — which now wins them new clients, including via ChatGPT recommendations.</li>
+    </ul>
+    <ul class="nerd">
       <li>LLM-backed contract review pipeline that extracts and risk-scores clauses from PDFs (Python, Pydantic, Streamlit).</li>
       <li>Next.js + SQLite tool indexing 1,000+ contract line items for bill-of-quantities pricing (TypeScript, better-sqlite3, Tailwind).</li>
       <li>Migrated the WordPress site off legacy infra, cutting page loads from 9s to 300ms (Docker Compose, Caddy, Cloudflare CDN).</li>
@@ -186,7 +211,10 @@
       <h3><a href="https://aphex-properties.com">Aphex Properties</a> — Freelance Web Developer</h3>
       <span class="meta">Aug 2025</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Built a property-listing feed integration for an estate agency site, plus self-hosted live chat and privacy-friendly analytics to capture leads.</li>
+    </ul>
+    <ul class="nerd">
       <li>PHP plugin parsing property XML feeds into an estate agency site (Docker Compose, Caddy, Cloudflare CDN).</li>
       <li>Self-hosted Chatwoot live chat on Oracle Cloud VPS for lead capture.</li>
       <li>Self-hosted Umami analytics on Oracle Cloud VPS for privacy-friendly traffic insight (no third-party cookies, GDPR-friendly).</li>
@@ -202,7 +230,10 @@
       <h3>ProTakeoff fork — PDF measurement for construction / QS</h3>
       <span class="meta">Jul 2026</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Took a single-user PDF measurement tool for construction and rebuilt it so a whole team can measure the same drawing together, live.</li>
+    </ul>
+    <ul class="nerd">
       <li>Forked a single-user tool for measuring architectural PDFs (areas, linear runs, item counts — the kind a quantity surveyor does) and rebuilt it for real-time multi-user collaboration (Yjs CRDT, HTTP polling, zero merge conflicts).</li>
       <li>Deployed on a Cloudflare stack: Pages + Functions (Hono) + D1 + R2 + CF Access; Yjs is source of truth, mirrored to Zustand.</li>
     </ul>
@@ -213,7 +244,10 @@
       <h3>Polymarket Analytics</h3>
       <span class="meta">Apr 2025</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Analytics dashboard for prediction-market data — track smart money and backtest strategies.</li>
+    </ul>
+    <ul class="nerd">
       <li>Full-stack analytics dashboard (Next.js + Python) for historical market data, smart-money tracking, and backtesting.</li>
       <li>NautilusTrader integration for realistic execution modeling — slippage, latency, fill probability across six strategies.</li>
       <li>Containerised with Docker Compose; Python backtest service proxied through Next.js API routes.</li>
@@ -225,7 +259,10 @@
       <h3><a href="https://github.com/max-hill-4/max-58">Custom Keyboards</a></h3>
       <span class="meta">Nov 2024 – now</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Design and build custom keyboards end-to-end — layouts generated from a scan of your hands, custom circuit boards, 3D-printed cases. Contributor to ZMK Studio.</li>
+    </ul>
+    <ul class="nerd">
       <li>Webcam hand scanner using MediaPipe; extracts fingertip/palm measurements to generate parametric keyboard layouts fitted to the user's hands.</li>
       <li>Two nRF52840-based keyboard PCBs designed in KiCad; 3D-printed enclosures, PCBWAY-sourced, hand-soldered.</li>
       <li>Contributed import/export to ZMK Studio (open-source keyboard config tool); merged PRs in active community use.</li>
@@ -237,7 +274,10 @@
       <h3><a href="https://github.com/max-hill-4/college-alevel-nea">A-Level NEA — Multiplayer Game</a></h3>
       <span class="meta">2022</span>
     </div>
-    <ul>
+    <ul class="norm">
+      <li>Multiplayer game with real-time play over the network and persistent user accounts — my A-Level project.</li>
+    </ul>
+    <ul class="nerd">
       <li>Multiplayer game built with Pygame and Python sockets — clients connect over the network for real-time play against each other.</li>
       <li>MySQL backend for persistent user accounts and match state; server handles multiple concurrent client connections.</li>
     </ul>
@@ -289,6 +329,24 @@
     </ul>
   </div>
 </section>
+
+<script>
+(function () {
+  var btn = document.getElementById('nerd-toggle');
+  if (localStorage.getItem('nerd') === '1') document.body.classList.add('nerd');
+  function sync() {
+    var on = document.body.classList.contains('nerd');
+    btn.setAttribute('aria-pressed', on);
+    btn.textContent = on ? 'nerd mode: on' : 'nerd mode';
+  }
+  btn.addEventListener('click', function () {
+    var on = document.body.classList.toggle('nerd');
+    localStorage.setItem('nerd', on ? '1' : '0');
+    sync();
+  });
+  sync();
+})();
+</script>
 
 </body>
 </html>
